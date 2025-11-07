@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Venesaa – Miss KMTC Kisumu 2025💓💖</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <style>
+        :root{
+            --pink:#ff69b4;--hotpink:#ff1493;--purple:#9b59b6;
+            --neon-blue:#00ffff;--neon-purple:#da00ff;
+            --glow:0 0 40px rgba(255,20,147,0.8);
+        }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        html{scroll-behavior:smooth;overflow-x:hidden;}
+        body{
+            font-family:'Segoe UI',sans-serif;background:#0a0616;color:#fff;
+            overflow-x:hidden;transition:background .8s ease;
+            background:radial-gradient(circle at 50% 100%,#1a0d2e 0%,#000 100%);
+        }
+        body.light{background:#fff5fb;color:#333;}
+
+        /* SPLASH */
+        #splash{
+            position:fixed;inset:0;background:#000;z-index:9999;
+            display:flex;flex-direction:column;justify-content:center;align-items:center;
+            backdrop-filter:blur(12px);
+        }
+        #splash i{
+            font-size:170px;background:linear-gradient(45deg,var(--pink),var(--neon-blue));
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+            animation:float 6s ease-in-out infinite,glow 2.5s ease-in-out infinite alternate;
+        }
+        #splash h1{
+            margin-top:30px;font-size:5.5rem;font-weight:900;
+            background:linear-gradient(45deg,var(--hotpink),var(--neon-purple));
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+        }
+        @keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-40px) rotate(3deg)}}
+        @keyframes glow{from{filter:drop-shadow(0 0 30px #ff1493)}to{filter:drop-shadow(0 0 70px #00ffff)}}
+
+        /* THEME */
+        .theme-toggle{
+            position:fixed;top:20px;right:20px;z-index:1000;
+            width:65px;height:65px;border-radius:50%;background:var(--hotpink);
+            border:none;cursor:pointer;box-shadow:var(--glow);color:#fff;
+            font-size:2rem;display:flex;align-items:center;justify-content:center;
+            transition:all .6s cubic-bezier(.68,-.55,.27,1.55);
+        }
+        .theme-toggle:hover{transform:scale(1.2) rotate(25deg);}
+        body.light .theme-toggle{background:#9b59b6;}
+
+        /* PARALLAX */
+        .parallax{position:fixed;inset:0;pointer-events:none;overflow:hidden;}
+        .layer{position:absolute;width:200%;height:200%;background-repeat:repeat;}
+        .stars{
+            background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="50" cy="50" r="2" fill="%23fff"/></svg>');
+            animation:drift 240s linear infinite;opacity:.4;
+        }
+        .hearts{
+            background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70"><path d="M35 60c-10-10 10-20 20-10 10-10 30 0 20-10-10-10-30 0-20-10z" fill="%23ff1493"/></svg>');
+            animation:drift 160s linear infinite reverse;opacity:.3;
+        }
+        @keyframes drift{from{background-position:0 0}to{background-position:1200px 1200px}}
+
+        /* HERO */
+        .hero{
+            height:100vh;display:flex;flex-direction:column;
+            justify-content:center;align-items:center;text-align:center;padding:0 20px;
+        }
+        .hero h1{
+            font-size:clamp(3rem,10vw,7rem);font-weight:900;
+            background:linear-gradient(45deg,var(--pink),var(--neon-blue));
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+            animation:titlePulse 5s ease-in-out infinite;
+        }
+        @keyframes titlePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+        .cta-btn{
+            padding:20px 55px;margin:15px;border:none;border-radius:50px;
+            font-size:1.3rem;font-weight:bold;cursor:pointer;
+            background:linear-gradient(45deg,var(--hotpink),var(--neon-purple));
+            box-shadow:var(--glow);color:#fff;
+            transition:all .6s cubic-bezier(.68,-.55,.27,1.55);
+        }
+        .cta-btn:hover{transform:translateY(-12px) scale(1.12);box-shadow:0 25px 50px rgba(255,20,147,.7);}
+
+        /* COUNTDOWN */
+        #countdown{
+            background:rgba(255,255,255,.15);backdrop-filter:blur(20px);
+            padding:22px 60px;border-radius:50px;font-size:clamp(1.5rem,5vw,2.5rem);
+            font-weight:bold;margin-top:35px;border:2px solid rgba(255,20,147,.4);
+            animation:pulseGlow 2.5s ease infinite alternate;
+        }
+        @keyframes pulseGlow{from{box-shadow:0 0 40px #ff1493}to{box-shadow:0 0 70px #00ffff}}
+
+        /* VENESAA'S PERSONAL STORY – NEW HERO SECTION */
+        .story{
+            padding:140px 20px;background:linear-gradient(135deg,#1a0d2e 0%,#2d1b4e 100%);
+            position:relative;overflow:hidden;
+        }
+        .story::before{
+            content:'';position:absolute;inset:0;
+            background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 90 C20 70, 10 30, 50 10 C90 30, 80 70, 50 90" fill="none" stroke="%23ff1493" stroke-width="1" opacity="0.1"/></svg>') repeat;
+            animation:drift 300s linear infinite;
+        }
+        .story-container{
+            max-width:1100px;margin:auto;text-align:center;position:relative;z-index:2;
+        }
+        .story h2{
+            font-size:4.2rem;margin-bottom:60px;
+            background:linear-gradient(45deg,var(--pink),var(--neon-blue));
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+        }
+        .story-text{
+            font-size:1.35rem;line-height:2.2;background:rgba(255,255,255,.08);
+            padding:50px 40px;border-radius:30px;backdrop-filter:blur(20px);
+            border:2px solid rgba(255,20,147,.3);box-shadow:0 20px 60px rgba(0,0,0,.5);
+            animation:fadeInUp 1.5s ease-out;
+        }
+        .story-text p{margin:25px 0;}
+        .story-quote{
+            font-size:2rem;font-style:italic;margin:50px 0;color:var(--hotpink);
+            text-shadow:0 0 30px rgba(255,20,147,.6);
+        }
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+
+        /* INSPIRATION CARDS */
+        .inspire{padding:120px 20px;background:linear-gradient(135deg,#2d1b4e,#1a0d2e);}
+        .inspire-grid{
+            display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            gap:35px;max-width:1600px;margin:auto;
+        }
+        .inspire-card{
+            background:rgba(255,255,255,.1);padding:40px;border-radius:28px;
+            backdrop-filter:blur(18px);border:1px solid rgba(255,20,147,.3);
+            transition:all .8s cubic-bezier(.22,1,.36,1);
+            opacity:0;transform:translateY(60px);
+        }
+        .inspire-card.visible{opacity:1;transform:translateY(0);}
+        .inspire-card:hover{transform:translateY(-20px) scale(1.03);}
+        .inspire-card i{
+            font-size:4rem;margin-bottom:20px;
+            background:linear-gradient(45deg,var(--pink),var(--neon-blue));
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+        }
+
+        /* GALLERY & REST SAME */
+        .gallery{
+            display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:22px;padding:50px 20px;max-width:1600px;margin:auto;
+        }
+        .gallery-item{
+            position:relative;border-radius:22px;overflow:hidden;cursor:pointer;
+            box-shadow:0 15px 40px rgba(0,0,0,.5);
+            transition:all .7s ease;
+        }
+        .gallery-item:hover{transform:scale(1.06);}
+        .gallery-item img{width:100%;display:block;transition:.9s ease;}
+        .gallery-item:hover img{transform:scale(1.2);}
+        .overlay{
+            position:absolute;inset:0;background:rgba(0,0,0,.75);
+            display:flex;flex-direction:column;justify-content:center;align-items:center;
+            opacity:0;transition:.7s ease;
+        }
+        .gallery-item:hover .overlay{opacity:1;}
+
+        .card{
+            background:rgba(255,255,255,.1);padding:50px;border-radius:30px;
+            backdrop-filter:blur(20px);max-width:1100px;margin:auto;
+        }
+        #messages{
+            display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+            gap:28px;margin-top:45px;
+        }
+        .msg{
+            background:rgba(255,105,180,.15);padding:28px;border-radius:22px;
+            border:1px solid rgba(255,20,147,.3);opacity:0;
+            animation:msgIn .9s ease forwards;
+        }
+        @keyframes msgIn{to{opacity:1;transform:translateY(0)}}
+
+        #vote-btn{
+            font-size:3.5rem;padding:45px 100px;
+            background:linear-gradient(45deg,var(--hotpink),var(--neon-purple));
+            animation:heartbeat 1.8s ease infinite;
+        }
+        @keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+
+        .particle{
+            position:fixed;pointer-events:none;font-size:3rem;z-index:999;
+            animation:sparkle 2.8s cubic-bezier(.22,1,.36,1) forwards;
+            filter:drop-shadow(0 0 20px currentColor);
+        }
+        @keyframes sparkle{
+            0%{transform:translateY(0) scale(0) rotate(0);opacity:1}
+            100%{transform:translateY(-140vh) scale(1) rotate(720deg);opacity:0}
+        }
+
+        footer{padding:100px 20px;text-align:center;}
+        .social a{font-size:3.5rem;margin:0 30px;color:var(--pink);transition:.6s;}
+        .social a:hover{transform:translateY(-18px) scale(1.5);filter:drop-shadow(0 0 30px currentColor);}
+    </style>
+</head>
+<body>
+    <div class="parallax">
+        <div class="layer stars"></div>
+        <div class="layer hearts"></div>
+    </div>
+
+    <!-- SPLASH -->
+    <div id="splash">
+        <i class="fas fa-crown"></i>
+        <h1>Team Venesaa</h1>
+    </div>
+
+    <!-- THEME -->
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Venesaa for Miss KMTC Kisumu 2025</h1>
+        <p><h3>From the shores of Lake Victoria to the crown</h3></p>
+        <div>
+            <button class="cta-btn" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">Read Her Story</button>
+            <button class="cta-btn" onclick="shareWA()">Share Her Dream</button>
+        </div>
+        <div id="countdown">30 days to go!</div>
+    </section>
+
+    <!-- VENESAA'S PERSONAL STORY – NEW! -->
+    <section id="story" class="story">
+        <div class="story-container">
+            <h2>Venesaa's Journey: From Pain to Purpose</h2>
+            <div class="story-text">
+                <p>Born in the heart of Kisumu’s Kondele slums, Venesaa Atieno grew up watching her single mother sell fish from 4 AM to feed seven children. At age 9, she lost her younger brother to malaria — a preventable death that shattered her world.</p>
+                
+                <p>That day, she made a promise on his grave: <strong>“I will become a nurse. No child will die because they couldn’t afford care.”</strong></p>
+                
+                <p>She studied under streetlights, scored A- in KCSE, and won a full scholarship to KMTC Kisumu. Today, she’s the top nursing student in Kenya, founder of “Nurse Angels Kenya” — a movement that has given free medical care to over 3,700 families.</p>
+                
+                <p>She invented banana-fiber sanitary pads that cost 5 bob instead of 150 bob — now used in 47 schools across Nyanza. She mentors 300 teenage mothers to go back to school. She prays with patients before surgery. Doctors call her “The Calming Angel.”</p>
+                
+                <div class="story-quote">
+                    “I don’t want the crown for myself. I want it so every little girl in the village can look up and say — if Venesaa from Kondele can, then I CAN TOO.”
+                </div>
+                
+                <p>This isn’t just a pageant. This is Kenya’s daughter rising to heal a nation.</p>
+                <p><strong>#FromKondeleWithLove #CrownHerWithPurpose</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8 INSPIRATION CARDS -->
+    <section class="inspire">
+        <div style="max-width:1600px;margin:auto;padding:0 20px;">
+            <h2 style="font-size:4.2rem;text-align:center;margin-bottom:70px;">
+                8 Reasons Kenya is Voting VENESAA
+            </h2>
+            <div class="inspire-grid">
+                <div class="inspire-card"><i class="fas fa-heartbeat"></i><h3>Real Nurse, Real Impact</h3><p>3,700+ patients treated for free</p></div>
+                <div class="inspire-card"><i class="fas fa-graduation-cap"></i><h3>Top 0.1% Student</h3><p>Dean's List every semester</p></div>
+                <div class="inspire-card"><i class="fas fa-hands-helping"></i><h3>Queen of KMTC</h3><p>Rose from slums to national hero</p></div>
+                <div class="inspire-card"><i class="fas fa-female"></i><h3>300 Girls Mentored</h3><p>Teen mothers back in school</p></div>
+                <div class="inspire-card"><i class="fas fa-trophy"></i><h3>Miss Nursing Kenya 2024</h3><p>Already a winner</p></div>
+                <div class="inspire-card"><i class="fas fa-lightbulb"></i><h3>Banana Pad Inventor</h3><p>Made pads cost 5 bob instead of 150</p></div>
+                <div class="inspire-card"><i class="fas fa-pray"></i><h3>The Calming Angel</h3><p>Prays with patients before surgery</p></div>
+                <div class="inspire-card"><i class="fas fa-crown"></i><h3>Kenya’s Future</h3><p>She’s not asking for the crown — she’s earning it</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <div style="max-width:1600px;margin:auto;padding:0 20px;">
+            <h2 style="text-align:center;font-size:3.8rem;margin:60px 0;">Her Crown-Worthy Moments</h2>
+            <div class="gallery">
+                <div class="gallery-item" onclick="openLightbox('https://files.catbox.moe/vjjtdz.jpg')">
+                    <img src="https://files.catbox.moe/vjjtdz.jpg" alt="Venesaa"/>
+                    <div class="overlay"><i class="fas fa-expand"></i><p>Tap to enlarge</p></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://files.catbox.moe/it8lfa.jpg')">
+                    <img src="https://files.catbox.moe/it8lfa.jpg" alt="Venesaa"/>
+                    <div class="overlay"><i class="fas fa-expand"></i><p>Tap to enlarge</p></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://files.catbox.moe/8584x4.jpg')">
+                    <img src="https://files.catbox.moe/8584x4.jpg" alt="Venesaa"/>
+                    <div class="overlay"><i class="fas fa-expand"></i><p>Tap to enlarge</p></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1606819717116-6f722706d2c3?ixlib=rb-4.0.3')">
+                    <img src="https://files.catbox.moe/p67sem.jpg" alt="Venesaa"/>
+                    <div class="overlay"><i class="fas fa-expand"></i><p>Tap to enlarge</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUPPORT -->
+    <section id="support">
+        <div style="max-width:1200px;margin:auto;padding:0 20px;">
+            <h2 style="text-align:center;font-size:3.8rem;margin-bottom:50px;">Support Wall</h2>
+            <div class="card">
+                <form id="supportForm" style="display:grid;gap:20px;">
+                    <input type="text" placeholder="Your Name" required style="padding:20px;border-radius:15px;border:none;font-size:1.2rem;"/>
+                    <textarea placeholder="Tell Venesaa why she inspires you..." required style="padding:20px;border-radius:15px;border:none;height:160px;font-size:1.2rem;"></textarea>
+                    <input type="file" accept="image/*"/>
+                    <button type="submit" class="cta-btn">Send My Love</button>
+                </form>
+                <div id="messages"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VOTE -->
+    <section style="text-align:center;padding:140px 20px;background:linear-gradient(135deg,#2d1b4e,#1a0d2e);">
+        <h2 style="font-size:4.5rem;margin-bottom:50px;">Kenya, It’s Time</h2>
+        <button id="vote-btn" class="cta-btn" onclick="vote()">VOTE VENESAA (<span id="votes">0</span>)</button>
+        <p style="margin-top:35px;font-size:1.5rem;">Live votes today: <strong id="live-count">0</strong></p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p style="margin-top:25px;font-size:1.5rem;">teamvenesaa@gmail.com</p>
+        <p>From Tech Brian💜 with Love • Made by Team Venesaa</p>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" onclick="this.style.display='none'" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.98);z-index:9999;justify-content:center;align-items:center;padding:20px;">
+        <span onclick="document.getElementById('lightbox').style.display='none'" style="position:absolute;top:20px;right:30px;font-size:5rem;color:#fff;cursor:pointer;">×</span>
+        <img id="lightbox-img" style="max-width:95%;max-height:95vh;border-radius:25px;box-shadow:0 0 80px rgba(255,20,147,.9);"/>
+    </div>
+
+    <script>
+        // Splash
+        setTimeout(() => document.getElementById('splash').remove(), 3800);
+
+        // Theme
+        function toggleTheme(){
+            document.body.classList.toggle('light');
+            const isLight = document.body.classList.contains('light');
+            document.querySelector('.theme-toggle i').classList.toggle('fa-moon');
+            document.querySelector('.theme-toggle i').classList.toggle('fa-sun');
+            localStorage.setItem('theme', isLight?'light':'dark');
+        }
+        if(localStorage.getItem('theme')==='light') toggleTheme();
+
+        // Countdown - TODAY IS NOV 6, 2025 → 30 days to Dec 6
+        const event = new Date('2025-12-06T19:00:00');
+        setInterval(()=>{
+            const diff = event - new Date();
+            if(diff<=0){document.getElementById('countdown').innerHTML='CROWNED TODAY!';return;}
+            const d=Math.floor(diff/864e5),h=Math.floor(diff%864e5/36e5),
+                  m=Math.floor(diff%36e5/6e4),s=Math.floor(diff%6e4/1e3);
+            document.getElementById('countdown').innerHTML=`${d}d ${h}h ${m}m ${s}s`;
+        },1000);
+
+        // Cards animation
+        const cards = document.querySelectorAll('.inspire-card');
+        const observer = new IntersectionObserver(entries=>{
+            entries.forEach((entry,i)=>{
+                if(entry.isIntersecting){
+                    setTimeout(()=>entry.target.classList.add('visible'), i*150);
+                }
+            });
+        },{threshold:0.3});
+        cards.forEach(card=>observer.observe(card));
+
+        // Lightbox
+        function openLightbox(src){
+            document.getElementById('lightbox-img').src=src;
+            document.getElementById('lightbox').style.display='flex';
+        }
+
+        // Support
+        let votes=0,live=0;
+        document.getElementById('supportForm').onsubmit=e=>{
+            e.preventDefault();
+            const name=this[0].value,msg=this[1].value,file=this[2].files[0];
+            const div=document.createElement('div');div.className='msg';
+            div.innerHTML=`<strong>${name}</strong><p>${msg}</p>`;
+            if(file){
+                const r=new FileReader();
+                r.onload=()=>{div.innerHTML+=`<img src="${r.result}" style="width:100%;border-radius:18px;margin-top:15px;">`;
+                    document.getElementById('messages').prepend(div);}
+                r.readAsDataURL(file);
+            }else document.getElementById('messages').prepend(div);
+            this.reset();
+            createParticles(35);
+        };
+
+        // Vote
+        function vote(){
+            votes++;live++;
+            document.getElementById('votes').textContent=votes.toLocaleString();
+            document.getElementById('live-count').textContent=live.toLocaleString();
+            createParticles(80);
+        }
+
+        // Particles
+        function createParticles(n){
+            for(let i=0;i<n;i++){
+                setTimeout(()=>{
+                    const p=document.createElement('div');p.className='particle';
+                    p.innerHTML=['Heart','Star','Butterfly','Purple Heart','Sparkles','Crown','Gem'][Math.floor(Math.random()*7)];
+                    p.style.left=Math.random()*100+'vw';
+                    p.style.color=['#ff69b4','#00ffff','#da00ff','#ff1493','#9b59b6'][Math.floor(Math.random()*5)];
+                    document.body.appendChild(p);
+                    setTimeout(()=>p.remove(),2800);
+                },i*35);
+            }
+        }
+
+        // Share
+        function shareWA(){
+            const text=`Venesaa from Kondele is about to make history! 👑\nFrom losing her brother to malaria → to saving 3,700 lives.\nLet's crown Kenya's real queen on Dec 6!\n${location.href} #FromKondeleWithLove`;
+            open(`https://wa.me/?text=${encodeURIComponent(text)}`);
+        }
+    </script>
+</body>
+</html>
